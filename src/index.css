@@ -1,0 +1,87 @@
+@import "tailwindcss";
+@import "katex/dist/katex.min.css";
+
+@theme {
+  --font-sans: "Nunito", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Baloo 2", "Nunito", ui-sans-serif, system-ui, sans-serif;
+
+  /* Galileo brand palette — Brilliant-inspired: vivid, warm, playful */
+  --color-brand-50: #eef1ff;
+  --color-brand-100: #e0e4ff;
+  --color-brand-200: #c6ccff;
+  --color-brand-300: #a3aaff;
+  --color-brand-400: #7a7ff8;
+  --color-brand-500: #5a5ce8;
+  --color-brand-600: #4640d1;
+  --color-brand-700: #3832a8;
+  --color-brand-800: #2c2b80;
+  --color-brand-900: #21215e;
+
+  --color-success-50: #eafff1;
+  --color-success-100: #ccffdf;
+  --color-success-300: #7cf0ab;
+  --color-success-500: #2dc86b;
+  --color-success-600: #1fab57;
+  --color-success-700: #178a46;
+
+  --color-danger-50: #fff1f0;
+  --color-danger-300: #ffb3ac;
+  --color-danger-500: #f24b3f;
+  --color-danger-600: #d63a2f;
+
+  --color-xp-400: #ffca3a;
+  --color-xp-500: #f5a609;
+  --color-xp-600: #d98a00;
+
+  --color-streak-400: #ffd23f;
+  --color-streak-500: #ffb800;
+
+  --color-ink-950: #1a1a2e;
+  --color-ink-900: #23233d;
+  --color-ink-700: #45455f;
+  --color-ink-500: #6b6b85;
+  --color-ink-300: #b0b0c8;
+  /* variante piena (non trasparente) di ink-300, usata per riempimenti opachi */
+  --color-ink-200: #dfdee5;
+
+  --color-cream-50: #fffdf8;
+  --color-cream-100: #fff9ee;
+
+  --shadow-soft: 0 2px 0 0 rgb(0 0 0 / 0.06), 0 8px 24px -8px rgb(35 35 61 / 0.12);
+  --shadow-pop: 0 4px 0 0 var(--tw-shadow-color, rgb(0 0 0 / 0.15));
+
+  --radius-xl: 1.25rem;
+  --radius-2xl: 1.75rem;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-cream-50);
+  color: var(--color-ink-950);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* thumb-press affordance used by playful buttons/cards */
+.pressable {
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+.pressable:active {
+  transform: translateY(2px);
+}
+
+::selection {
+  background: var(--color-brand-200);
+}

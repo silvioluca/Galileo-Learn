@@ -1,0 +1,121 @@
+import type { Lesson } from "../../../types/course";
+
+export const equazioniConRaccoglimento: Lesson = {
+  id: "equazioni-con-raccoglimento",
+  title: "Equazioni con Raccoglimento",
+  status: "playable",
+  xpReward: 95,
+  exercises: [
+    {
+      type: "text-concept",
+      id: "ecr-concetto-1",
+      lines: [
+        "Quando la stessa base compare più volte con esponenti diversi, sommati tra loro, puoi raccogliere la potenza con l'esponente più piccolo: $b^x + b^{x+k} = b^x(1 + b^k)$.",
+        "L'equazione si riduce così a una singola potenza moltiplicata per un numero, che sai già risolvere.",
+      ],
+    },
+    {
+      type: "percent-growth",
+      id: "ecr-1",
+      prompt: "Risolvi: $5^x + 5^{x+1} = 150$.",
+      steps: [
+        "$$\\begin{aligned} 5^x + 5^{x+1} &= 150 \\\\ 5^x (1 + 5) &= 150 \\\\ 5^x \\cdot 6 &= 150 \\end{aligned}$$",
+      ],
+      prefixText: "x =",
+      tileValues: [1, 2, 3, 4],
+      correctValue: 2,
+      explanation: "$5^x \\cdot 6 = 150$, quindi $5^x = 25 = 5^2$: $x = 2$.",
+    },
+    {
+      type: "percent-growth",
+      id: "ecr-2",
+      prompt: "Risolvi: $3^x + 3^{x+2} = 270$.",
+      steps: [
+        "$$\\begin{aligned} 3^x + 3^{x+2} &= 270 \\\\ 3^x (1 + 3^2) &= 270 \\\\ 3^x \\cdot 10 &= 270 \\end{aligned}$$",
+      ],
+      prefixText: "x =",
+      tileValues: [2, 3, 4, 5],
+      correctValue: 3,
+      explanation: "$3^x \\cdot 10 = 270$, quindi $3^x = 27 = 3^3$: $x = 3$.",
+    },
+    {
+      type: "text-concept",
+      id: "ecr-concetto-2",
+      lines: [
+        "La stessa idea funziona anche con la sottrazione, e anche con più di due termini: raccogli sempre la potenza con l'esponente più piccolo.",
+      ],
+    },
+    {
+      type: "percent-growth",
+      id: "ecr-3",
+      prompt: "Risolvi: $4^x - 4^{x-1} = 48$.",
+      steps: [
+        "$$\\begin{aligned} 4^x - 4^{x-1} &= 48 \\\\ 4^x \\left(1 - \\dfrac{1}{4}\\right) &= 48 \\\\ 4^x \\cdot \\dfrac{3}{4} &= 48 \\end{aligned}$$",
+      ],
+      prefixText: "x =",
+      tileValues: [2, 3, 4, 5],
+      correctValue: 3,
+      explanation: "$4^x \\cdot \\dfrac{3}{4} = 48$, quindi $4^x = 64 = 4^3$: $x = 3$.",
+    },
+    {
+      type: "percent-growth",
+      id: "ecr-4",
+      prompt: "Risolvi: $2^{x+2} + 2^{x+1} + 2^x = 28$.",
+      steps: [
+        "$$\\begin{aligned} 2^{x+2} + 2^{x+1} + 2^x &= 28 \\\\ 2^x (2^2 + 2 + 1) &= 28 \\\\ 2^x \\cdot 7 &= 28 \\end{aligned}$$",
+      ],
+      prefixText: "x =",
+      tileValues: [1, 2, 3, 4],
+      correctValue: 2,
+      explanation: "$2^x \\cdot 7 = 28$, quindi $2^x = 4 = 2^2$: $x = 2$.",
+    },
+    {
+      type: "text-concept",
+      id: "ecr-concetto-3",
+      lines: [
+        "Una volta raccolto, puoi anche vedere l'equazione come l'intersezione tra una curva e una retta orizzontale, esattamente come prima.",
+      ],
+    },
+    {
+      type: "graph-point",
+      mode: "solve",
+      id: "ecr-5",
+      prompt: "Risolvi: $6 \\cdot 5^x = 150$. (È la stessa equazione di prima, già raccolta.)",
+      coeff: 6,
+      base: 5,
+      targetValue: 150,
+      correctX: 2,
+      minDay: 0,
+      maxDay: 4,
+      maxValue: 170,
+      yStep: 30,
+      axisLabel: "x",
+      quantityLabel: "y",
+      explanation: "$6 \\cdot 5^2 = 6 \\cdot 25 = 150$, quindi $x = 2$.",
+    },
+    {
+      type: "graph-point",
+      mode: "solve",
+      id: "ecr-6",
+      prompt: "Risolvi: $\\dfrac{3}{4} \\cdot 4^x = 48$.",
+      coeff: 0.75,
+      base: 4,
+      targetValue: 48,
+      correctX: 3,
+      minDay: 0,
+      maxDay: 5,
+      maxValue: 200,
+      yStep: 40,
+      axisLabel: "x",
+      quantityLabel: "y",
+      explanation: "$\\dfrac{3}{4} \\cdot 4^3 = \\dfrac{3}{4} \\cdot 64 = 48$, quindi $x = 3$.",
+    },
+    {
+      type: "text-concept",
+      id: "ecr-concetto-4",
+      lines: [
+        "Il raccoglimento è lo stesso principio usato per fattorizzare i polinomi: isola la parte comune, e l'equazione diventa molto più semplice da risolvere.",
+      ],
+    },
+  ],
+};
